@@ -3,9 +3,10 @@
 		FILTER
 	</section>
 	<section>
+		<base-card>
 		<div class ="controls">
-			<button>Refresh</button>
-			<router-link to="/register">Register as Coach</router-link>
+			<base-button mode="outline">Refresh</base-button>
+			<base-button link to="/register">Register as Coach</base-button>
 		</div>
 		<ul v-if="hasCoaches"> 
 			<coach-item 
@@ -20,6 +21,7 @@
 			</coach-item>
 		</ul>
 		<h3 v-else>No coaches</h3>
+	</base-card>
 	</section>
 </template>
 
@@ -42,5 +44,5 @@ export default {
 
 </script>
 <style scoped>
-@import './coaches-list.css'
+@import './coaches-list.css';
 </style>

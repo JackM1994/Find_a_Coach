@@ -14,7 +14,7 @@
 		</div>
 		<div class="form-control">
 			<label for="rate">Hourly Rate</label>
-			<input type="number" id='rate' v-model.number="trim"/>
+			<input type="number" id='rate' v-model.number="rate"/>
 		</div>
 		<div class="form-control">
 			<h3>Areas of Expertise</h3>
@@ -36,10 +36,11 @@
 </template>
 <script>
 	export default{
+		emits: ['save-data'],
 		data(){
 			return{
-				firstname: '',
-				lastname: '',
+				firstName: '',
+				lastName: '',
 				description: '',
 				rate: null,
 				areas: []
@@ -54,7 +55,8 @@
 					rate: this.rate,
 					areas: this.areas
 				};
-				console.log(formData);
+				this.$emit('save-data', formData);
+
 			}
 		}
 	}
@@ -83,7 +85,7 @@ textarea{
 }
 input:focus,
 textarea:focus {
-	backgrounf-color: #f0e6fd;
+	background-color: #f0e6fd;
 	outline: none;
 	border-color: #3d008d;
 }

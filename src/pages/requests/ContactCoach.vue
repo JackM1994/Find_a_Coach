@@ -31,7 +31,12 @@
 					this.formIsValid = false;
 					return;
 				}
-				
+				this.$store.dispatch('requests/contactCoach', {
+					email: this.email,
+					messgae: this.message,
+					coachId: this.$route.id
+				});
+				this.$router.replace('/coaches');
 			},
 		}
 	}

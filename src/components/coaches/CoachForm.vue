@@ -13,7 +13,7 @@
 		<div class="form-control" :class="{invalid: !description.isValid}">
 			<label for="description">Description</label>
 			<textarea id="description" rows="5" v-model.trim="description.val" @blur="clearValidity('description')"></textarea>
-			<p v-if="description.isValid">Description must not be empty!</p>
+			<p v-if="!description.isValid">Description must not be empty!</p>
 		</div>
 		<div class="form-control" :class="{invalid: !rate.isValid}">
 			<label for="rate">Hourly Rate</label>
@@ -86,7 +86,7 @@
 					this.description.isValid = false;
 					this.formIsValid = false;
 				}
-				if(this.rate.val || this.rate.val < 0){
+				if(this.rate.val  < 0){
 					this.rate.isValid = false;
 					this.formIsValid = false;
 				}

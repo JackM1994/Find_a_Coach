@@ -33,12 +33,12 @@
 				}
 				this.$store.dispatch('requests/contactCoach', {
 					email: this.email,
-					messgae: this.message,
+					message: this.message,
 					coachId: this.$route.params.id
 				});
 				this.$router.replace('/coaches');
 			},
-		}
+		},
 	}
 </script>
 

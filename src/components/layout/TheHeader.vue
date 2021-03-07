@@ -24,6 +24,7 @@
 		methods:{
 			logout(){
 				this.$store.dispatch('logout');
+				this.$router.replaces('/coaches');
 			}
 		}
 	}
